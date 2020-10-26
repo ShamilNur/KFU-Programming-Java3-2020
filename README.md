@@ -1,5 +1,5 @@
 ## INF 1.
-Practice.ru.kpfu.itis.group903.nurkaev.01 wikipedia
+```Practice.ru.kpfu.itis.group903.nurkaev.01 wikipedia```
 
 Wikipedia
 
