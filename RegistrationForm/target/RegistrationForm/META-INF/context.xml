@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Some helpfull stuff for Tomcat etc. -->
-<Context antiJARLocking="true" cachingAllowed="false" path="/bookcatalogue"/>

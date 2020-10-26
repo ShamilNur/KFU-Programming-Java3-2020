@@ -1,8 +1,0 @@
-ru\kpfu\itis\group903\nurkaev\models\User.class
-ru\kpfu\itis\group903\nurkaev\validations\Validator.class
-ru\kpfu\itis\group903\nurkaev\repositories\UserRepository.class
-ru\kpfu\itis\group903\nurkaev\exceptions\DuplicateEntryException.class
-ru\kpfu\itis\group903\nurkaev\exceptions\DbException.class
-ru\kpfu\itis\group903\nurkaev\filters\Filter.class
-ru\kpfu\itis\group903\nurkaev\servlets\RegistrationServlet.class
-ru\kpfu\itis\group903\nurkaev\utils\Db.class
