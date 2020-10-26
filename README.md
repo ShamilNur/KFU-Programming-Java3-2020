@@ -46,3 +46,7 @@ Eyes that follow you
 
 Веб-страница с формой авторизации и сохранением данных в csv-файл с помощью библиотеки.  
 
+## INF 8 (12.10).
+```RegistrationForm.src.main.java.ru.kpfu.itis.group903.nurkaev.filters.BrowserNameFilter.java```
+
+Добавлен filter к форме регистрации (запрет на браузер Edge).
