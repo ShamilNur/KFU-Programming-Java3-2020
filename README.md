@@ -1,5 +1,5 @@
 ## INF 1.
-[Practice.ru.kpfu.itis.group903.nurkaev.01 wikipedia](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/Practice/ru/kpfu/itis/group903/nurkaev/01.%20wikipedia)
+```[Practice.ru.kpfu.itis.group903.nurkaev.01 wikipedia](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/Practice/ru/kpfu/itis/group903/nurkaev/01.%20wikipedia)```
 
 Сверстан клон Википедии (HTML, CSS).
 
