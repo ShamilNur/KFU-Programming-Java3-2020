@@ -4,10 +4,8 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import ru.kpfu.itis.group903.nurkaev.repositories.UsersRepository;
-import ru.kpfu.itis.group903.nurkaev.repositories.UsersRepositoryJdbcImpl;
-import ru.kpfu.itis.group903.nurkaev.services.UsersService;
-import ru.kpfu.itis.group903.nurkaev.services.UsersServiceImpl;
+import ru.kpfu.itis.group903.nurkaev.repositories.*;
+import ru.kpfu.itis.group903.nurkaev.services.*;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -19,7 +17,7 @@ import java.util.Properties;
 /**
  * @author Shamil Nurkaev @nshamil
  * 11-903
- * Homework
+ * Sem 1
  */
 
 @WebListener
@@ -35,6 +33,8 @@ public class AppConfigServletContextListener implements ServletContextListener {
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
+
+        // HikariCP for dataSource
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setJdbcUrl(properties.getProperty("db.url"));
         hikariConfig.setDriverClassName(properties.getProperty("db.driver.classname"));
@@ -42,14 +42,25 @@ public class AppConfigServletContextListener implements ServletContextListener {
         hikariConfig.setPassword(properties.getProperty("db.password"));
         hikariConfig.setMaximumPoolSize(Integer.parseInt(properties.getProperty("db.hikari.max-pool-size")));
         HikariDataSource dataSource = new HikariDataSource(hikariConfig);
-
         servletContext.setAttribute("dataSource", dataSource);
 
+        // UsersRepository
         UsersRepository usersRepository = new UsersRepositoryJdbcImpl(dataSource);
         UsersService usersService = new UsersServiceImpl(usersRepository);
-        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
         servletContext.setAttribute("usersService", usersService);
+
+        // RoomsRepository
+        RoomsRepository roomsRepository = new RoomsRepositoryJdbcImpl(dataSource);
+        RoomsService roomsService = new RoomsServiceImpl(roomsRepository);
+        servletContext.setAttribute("roomsService", roomsService);
+
+        // NewsRepository
+        NewsRepository newsRepository = new NewsRepositoryJdbcImpl(dataSource);
+        NewsService newsService = new NewsServiceImpl(newsRepository);
+        servletContext.setAttribute("newsService", newsService);
+
+        // PasswordEncoder
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         servletContext.setAttribute("passwordEncoder", passwordEncoder);
     }
 

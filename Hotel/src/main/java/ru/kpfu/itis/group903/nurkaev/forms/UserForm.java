@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 /**
  * @author Shamil Nurkaev @nshamil
  * 11-903
- * Homework
+ * Sem 1
  */
 
 @Data

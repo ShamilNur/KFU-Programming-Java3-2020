@@ -1,17 +1,14 @@
 package ru.kpfu.itis.group903.nurkaev.repositories;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author Shamil Nurkaev @nshamil
  * 11-903
- * Homework
+ * Sem 1
  */
 
 public class SimpleJdbcTemplate {
@@ -33,11 +30,11 @@ public class SimpleJdbcTemplate {
             }
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                List<T> result = new ArrayList<>();
-
                 if (resultSet == null) {
                     throw new SQLException("Empty result");
                 }
+
+                List<T> result = new ArrayList<>();
 
                 while (resultSet.next()) {
                     result.add(rowMapper.mapRow(resultSet));
@@ -69,6 +66,22 @@ public class SimpleJdbcTemplate {
                     rowMapper.mapRow(resultSet);
                 }
             }
+        } catch (SQLException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
+    public <T> void update(String sql, Object... args) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            int position = 1;
+            for (Object arg : args) {
+                preparedStatement.setObject(position, arg);
+                position++;
+            }
+
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new IllegalStateException(e);
         }

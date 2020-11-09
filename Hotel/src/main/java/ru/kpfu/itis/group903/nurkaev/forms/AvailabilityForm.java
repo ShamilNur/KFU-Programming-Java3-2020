@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 /**
  * @author Shamil Nurkaev @nshamil
  * 11-903
@@ -15,7 +17,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class LoginForm {
-    private String email;
-    private String password;
+public class AvailabilityForm {
+    private Long dateFrom;
+    private Long dateTo;
+    private Integer roomsNumber;
+    private Integer adultsNumber;
+    private Integer childNumber;
 }

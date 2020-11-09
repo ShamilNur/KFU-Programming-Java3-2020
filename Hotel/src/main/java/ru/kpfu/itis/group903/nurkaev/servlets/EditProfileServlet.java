@@ -1,7 +1,6 @@
 package ru.kpfu.itis.group903.nurkaev.servlets;
 
-import ru.kpfu.itis.group903.nurkaev.exceptions.WrongEmailOrPasswordException;
-import ru.kpfu.itis.group903.nurkaev.forms.LoginForm;
+import ru.kpfu.itis.group903.nurkaev.models.User;
 import ru.kpfu.itis.group903.nurkaev.services.UsersService;
 
 import javax.servlet.ServletConfig;
@@ -11,7 +10,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Optional;
 
 /**
  * @author Shamil Nurkaev @nshamil
@@ -19,8 +20,8 @@ import java.io.IOException;
  * Sem 1
  */
 
-@WebServlet("/signIn")
-public class SignInServlet extends HttpServlet {
+@WebServlet("/editProfile")
+public class EditProfileServlet extends HttpServlet {
 
     private UsersService usersService;
 
@@ -32,28 +33,26 @@ public class SignInServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/signIn.jsp").forward(req, resp);
+        HttpSession session = req.getSession();
+        String email = (String) session.getAttribute("Email");
+        Optional<User> userByEmailOptional = usersService.findOneByEmail(email);
+
+        if (userByEmailOptional.isPresent()) {
+            User user = userByEmailOptional.get();
+            req.setAttribute("FirstName", user.getFirstName());
+            req.setAttribute("LastName", user.getLastName());
+        }
+
+        req.getRequestDispatcher("/WEB-INF/views/editProfile.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String firstName = req.getParameter("first-name");
+        String lastName = req.getParameter("last-name");
         String email = req.getParameter("email");
-        String password = req.getParameter("password");
 
-        LoginForm loginForm = LoginForm.builder()
-                .email(email)
-                .password(password)
-                .build();
-
-        try {
-            usersService.signIn(loginForm);
-            req.getSession().setAttribute("Email", email);
-            resp.sendRedirect("/main");
-            return;
-        } catch (WrongEmailOrPasswordException e) {
-            req.setAttribute("message", "Неправильный логин или пароль.");
-        }
-
-        req.getRequestDispatcher("/WEB-INF/views/signIn.jsp").forward(req, resp);
+        usersService.updateByEmail(firstName, lastName, email);
+        resp.sendRedirect("/profile");
     }
 }

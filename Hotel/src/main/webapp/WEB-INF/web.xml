@@ -4,4 +4,22 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>ru.kpfu.itis.group903.nurkaev.filters.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>signInFilter</filter-name>
+        <filter-class>ru.kpfu.itis.group903.nurkaev.filters.SignInFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>signInFilter</filter-name>
+        <url-pattern>/availability</url-pattern>
+    </filter-mapping>
 </web-app>

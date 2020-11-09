@@ -18,7 +18,7 @@ import static ru.kpfu.itis.group903.nurkaev.queries.UserQueries.*;
 /**
  * @author Shamil Nurkaev @nshamil
  * 11-903
- * Homework
+ * Sem 1
  */
 
 public class UsersRepositoryJdbcImpl implements UsersRepository {
@@ -33,7 +33,7 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
             .lastName(row.getString("last_name"))
             .email(row.getString("email"))
             .hashPassword(row.getString("hash_password"))
-            .uuid(row.getString("uuid"))
+            .roomsId(row.getString("rooms_id"))
             .build();
 
     public UsersRepositoryJdbcImpl(DataSource dataSource) {
@@ -43,23 +43,15 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
     }
 
     @Override
-    public Optional<User> findOneByEmail(String email) {
-        // this query will return list with only one user.
-        // findAny returns this user.
-        return template.queryForList(SQL_SELECT_BY_EMAIL, userRowMapper, email).stream().findAny();
-    }
-
-    @Override
     public void signUp(UserForm userForm) throws DuplicateEntryException {
         Optional<User> userOptional = findOneByEmail(userForm.getEmail());
-        // если пользователь не найден в базе, разрешаем регистрацию
+        // if the user is not find in the DB, allow registration
         if (!userOptional.isPresent()) {
             User user = User.builder()
                     .firstName(userForm.getFirstName())
                     .lastName(userForm.getLastName())
                     .email(userForm.getEmail())
                     .hashPassword(encoder.encode(userForm.getPassword()))
-                    .uuid(userForm.getUuid())
                     .build();
             save(user);
         } else throw new DuplicateEntryException();
@@ -85,8 +77,7 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
             preparedStatement.setString(i++, entity.getFirstName());
             preparedStatement.setString(i++, entity.getLastName());
             preparedStatement.setString(i++, entity.getEmail());
-            preparedStatement.setString(i++, entity.getHashPassword());
-            preparedStatement.setString(i, entity.getUuid());
+            preparedStatement.setString(i, entity.getHashPassword());
 
             preparedStatement.executeUpdate();
 
@@ -103,14 +94,23 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
 
     @Override
     public void update(User entity) {
-        template.query(SQL_UPDATE_BY_ID, userRowMapper,
-                entity.getFirstName(), entity.getLastName(),
-                entity.getEmail(), entity.getHashPassword(), entity.getUuid());
+        template.update(SQL_UPDATE_BY_ID, entity.getFirstName(),
+                entity.getLastName(), entity.getEmail(), entity.getRoomsId(), entity.getId());
     }
 
     @Override
     public void delete(User entity) {
-        template.query(SQL_DELETE_BY_ID, userRowMapper, entity.getId());
+        template.update(SQL_DELETE_BY_ID, entity.getId());
+    }
+
+    @Override
+    public void deleteByEmail(String email) {
+        template.update(SQL_DELETE_BY_EMAIL, email);
+    }
+
+    @Override
+    public void updateByEmail(String firstName, String lastName, String email) {
+        template.update(SQL_UPDATE_BY_EMAIL, firstName, lastName, email, email);
     }
 
     @Override
@@ -118,6 +118,13 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
         // this query will return list with only one user.
         // findAny returns this user.
         return template.queryForList(SQL_SELECT_BY_ID, userRowMapper, id).stream().findAny();
+    }
+
+    @Override
+    public Optional<User> findOneByEmail(String email) {
+        // this query will return list with only one user.
+        // findAny returns this user.
+        return template.queryForList(SQL_SELECT_BY_EMAIL, userRowMapper, email).stream().findAny();
     }
 
     @Override

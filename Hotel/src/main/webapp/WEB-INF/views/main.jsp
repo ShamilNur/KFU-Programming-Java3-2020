@@ -6,48 +6,35 @@
     <meta charset="UTF-8">
     <title>Главная</title>
 
-    <style>
-        <%@include file="/WEB-INF/css/bootstrap.min.css" %>
-    </style>
-    <style type="text/css">
-        <%@include file="/WEB-INF/css/signUp.css" %>
-    </style>
-    <style type="text/css">
-        <%@include file="/WEB-INF/css/style.css" %>
-    </style>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css">
 </head>
 
 <body>
-
 <header>
     <div class="header-section">
         <div class="menu">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2">
-                        <div class="logo">
-                            <a href="./index.html" class="hotel-logo">HOTEL</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5" style="max-width: 400px">
                         <nav>
                             <ul>
-                                <li><a href="./index.html">Главная</a></li>
-                                <li><a href="./rooms.html">Бронирование</a></li>
+                                <li><a href="main">Главная</a></li>
+                                <li><a href="availability">Бронирование</a></li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="col-md-2">
+                    <span style="margin: auto">
                         <div class="top-phone-num">
-                            <img src="../../static/img/phone.png" alt="">
+                            <img src="${pageContext.request.contextPath}static/img/phone.png" alt="">
                             <span>+7 (999) 000-54-54</span>
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                    </span>
+                    <div class="col-md-5" style="max-width: 400px">
                         <nav>
                             <ul>
-                                <li><a href="./signUp.html">Регистрация</a></li>
-                                <li><a href="./signIn.html">Вход</a></li>
+                                <li><a href="signUp">Регистрация</a></li>
+                                <li><a href="signIn">Вход</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -64,7 +51,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="main-title">
-                            <h1 style="color: #fff"> Надеемся, что вам понравится пребывание у нас.</h1>
+                            <h1>Надеемся, что вам понравится пребывание у нас.</h1>
                         </div>
                     </div>
                 </div>
@@ -86,10 +73,10 @@
 <div class="footer-room-pic">
     <div class="container-fluid">
         <div class="row">
-            <img src="../../assets/img/room-footer-pic/room-1.jpg" alt="">
-            <img src="../../assets/img/room-footer-pic/room-2.jpg" alt="">
-            <img src="../../assets/img/room-footer-pic/room-3.jpg" alt="">
-            <img src="../../assets/img/room-footer-pic/room-4.jpg" alt="">
+            <img src="${pageContext.request.contextPath}static/img/room-footer-pic/room-1.jpg" alt="">
+            <img src="${pageContext.request.contextPath}static/img/room-footer-pic/room-2.jpg" alt="">
+            <img src="${pageContext.request.contextPath}static/img/room-footer-pic/room-3.jpg" alt="">
+            <img src="${pageContext.request.contextPath}static/img/room-footer-pic/room-4.jpg" alt="">
         </div>
     </div>
 </div>

@@ -1,9 +1,11 @@
-package ru.kpfu.itis.group903.nurkaev.forms;
+package ru.kpfu.itis.group903.nurkaev.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 /**
  * @author Shamil Nurkaev @nshamil
@@ -15,7 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class LoginForm {
-    private String email;
-    private String password;
+public class Tag {
+    private Long id;
+    private String tagName;
 }

@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let name = document.querySelector("#name"),
-        email = document.querySelector("#email"),
-        password = document.querySelector("#password"),
-        confirmPassword = document.querySelector("#confirm_password"),
-        consent = document.querySelector("#consent");
+    let password = document.querySelector("#password"),
+        confirmPassword = document.querySelector("#confirm_password");
 
     confirmPassword.addEventListener('input', () => {
         checkConfirmPassword(password, confirmPassword);

@@ -13,7 +13,7 @@ import java.util.Optional;
 /**
  * @author Shamil Nurkaev @nshamil
  * 11-903
- * Homework
+ * Sem1
  */
 
 public class UsersServiceImpl implements UsersService {
@@ -35,8 +35,18 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
+    public void deleteByEmail(String email) {
+        usersRepository.deleteByEmail(email);
+    }
+
+    @Override
     public void update(User entity) {
         usersRepository.update(entity);
+    }
+
+    @Override
+    public void updateByEmail(String firstName, String lastName, String email) {
+        usersRepository.updateByEmail(firstName, lastName, email);
     }
 
     @Override
@@ -47,6 +57,11 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public Optional<User> findById(Long id) {
         return usersRepository.findById(id);
+    }
+
+    @Override
+    public Optional<User> findOneByEmail(String email) {
+        return usersRepository.findOneByEmail(email);
     }
 
     @Override

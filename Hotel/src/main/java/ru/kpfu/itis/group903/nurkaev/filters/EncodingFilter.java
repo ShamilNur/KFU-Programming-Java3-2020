@@ -1,6 +1,9 @@
 package ru.kpfu.itis.group903.nurkaev.filters;
 
-import javax.servlet.*;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -10,20 +13,16 @@ import java.io.IOException;
 /**
  * @author Shamil Nurkaev @nshamil
  * 11-903
- * Homework
+ * Sem 1
  */
 
-@WebFilter("/*")
 public class EncodingFilter extends HttpFilter {
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest req = (HttpServletRequest) servletRequest;
-        HttpServletResponse resp = (HttpServletResponse) servletResponse;
-
+    public void doFilter(HttpServletRequest req, HttpServletResponse resp, FilterChain chain) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
 
-        filterChain.doFilter(servletRequest, servletResponse);
+        chain.doFilter(req, resp);
     }
-    
 }
