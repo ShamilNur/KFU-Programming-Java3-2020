@@ -1,32 +1,27 @@
 ## INF 1.
-[Practice.ru.kpfu.itis.group903.nurkaev.01 wikipedia](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/Practice/ru/kpfu/itis/group903/nurkaev/01.%20wikipedia)
+[ITIS_Practice.src.main.java.ru.kpfu.itis.group903.nurkaev.wikipedia](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/ITIS_Practice/src/main/java/ru/kpfu/itis/group903/nurkaev/wikipedia)
 
 Сверстан клон Википедии (HTML, CSS).
 
 ## INF 2.
-[Practice.ru.kpfu.itis.group903.nurkaev.01 wikipedia](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/Practice/ru/kpfu/itis/group903/nurkaev/01.%20wikipedia)
-
+[ITIS_Practice.src.main.java.ru.kpfu.itis.group903.nurkaev.wikipedia](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/ITIS_Practice/src/main/java/ru/kpfu/itis/group903/nurkaev/wikipedia)
 Добавлены медиазапросы к предыдушей домашке.
 
 ## INF 3 (21.09).
-[Practice.ru.kpfu.itis.group903.nurkaev.03 shop](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/Practice/ru/kpfu/itis/group903/nurkaev/03.%20shop)
-
+[ITIS_Practice.src.main.java.ru.kpfu.itis.group903.nurkaev.shop](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/ITIS_Practice/src/main/java/ru/kpfu/itis/group903/nurkaev/shop)
 Веб-страница с использованием компонентов Bootstrap 4.
 
 ## INF 4 (21.09).
-[Practice.ru.kpfu.itis.group903.nurkaev.04 colored](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/Practice/ru/kpfu/itis/group903/nurkaev/04.%20colored)
-
+[ITIS_Practice.src.main.java.ru.kpfu.itis.group903.nurkaev.colored](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/ITIS_Practice/src/main/java/ru/kpfu/itis/group903/nurkaev/colored)
 Веб-страница с 4-мя кнопками (R, G, B + looping RGB), при нажатии на которые цвет фона изменяется на цвет кнопки (с помощью JS).
 
 ## INF 5 (28.09).
-[Practice.ru.kpfu.itis.group903.nurkaev.05 cube](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/Practice/ru/kpfu/itis/group903/nurkaev/05.%20cube)
-
+[ITIS_Practice.src.main.java.ru.kpfu.itis.group903.nurkaev.cube](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/ITIS_Practice/src/main/java/ru/kpfu/itis/group903/nurkaev/cube)
 Веб-страница с рамкой, внутри которого движется куб, отскакивая от стен.
 
 
 ## INF 6 (28.09).
-[Practice.ru.kpfu.itis.group903.nurkaev.06 eyes](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/Practice/ru/kpfu/itis/group903/nurkaev/06.%20eyes)
-
+[ITIS_Practice.src.main.java.ru.kpfu.itis.group903.nurkaev.eyes](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/ITIS_Practice/src/main/java/ru/kpfu/itis/group903/nurkaev/eyes)
 Веб-страница с глазами, следящими за курсором.
 
 ## INF 7 (05.10).
@@ -38,3 +33,8 @@
 [RegistrationForm.src.main.java.ru.kpfu.itis.group903.nurkaev.filters.BrowserNameFilter.java](https://github.com/ShamilNur/KFU-Programming-Java3/blob/main/RegistrationForm/src/main/java/ru/kpfu/itis/group903/nurkaev/filters/BrowserNameFilter.java)
 
 Добавлен filter к форме регистрации (запрет на браузер Edge).
+
+## INF 11 (26.10).
+[ITIS_Practice.src.main.java.ru.kpfu.itis.group903.nurkaev.books](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/ITIS_Practice/src/main/java/ru/kpfu/itis/group903/nurkaev/books)
+
+Вывод html-таблицы с авторами и их книгами, перечисленными через запятую.
