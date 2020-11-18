@@ -1,6 +1,0 @@
-POST http://localhost:8080/news
-Content-Type: application/json
-
-{
-  "tagName" : "Жильё"
-}

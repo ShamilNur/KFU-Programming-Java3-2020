@@ -19,12 +19,12 @@ import java.io.IOException;
  * Homework
  */
 
-@WebServlet("/registration")
-public class RegistrationServlet extends HttpServlet {
+@WebServlet("/signUp")
+public class SignUpServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/views/registration.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/WEB-INF/views/signUp.jsp").forward(req, resp);
     }
 
     @Override
@@ -48,6 +48,6 @@ public class RegistrationServlet extends HttpServlet {
             req.setAttribute("message", "You entered incorrect data or did not fill in all the fields.");
         }
 
-        getServletContext().getRequestDispatcher("/WEB-INF/views/registration.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/WEB-INF/views/signUp.jsp").forward(req, resp);
     }
 }

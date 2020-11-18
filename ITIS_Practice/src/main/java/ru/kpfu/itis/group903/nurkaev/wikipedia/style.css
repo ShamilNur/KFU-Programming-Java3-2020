@@ -1,0 +1,130 @@
+@media all and (max-width: 1000px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation-wrapper {
+        display: flex;
+    }
+}
+
+.html, body {
+    font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.header-links {
+    font-size: 12px;
+    display: flex;
+    height: 20px;
+    justify-content: flex-end;
+}
+
+.header-links a {
+    padding: 4px;
+}
+
+main {
+    display: flex;
+}
+
+.main-content-wrapper {
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    width: 90%;
+}
+
+.left-sidebar {
+    background: #f6f6f6;
+    border-right: 1px solid lightblue;
+    width: 9%;
+}
+
+.wiki-logo {
+    width: 10em;
+    height: 160px;
+}
+
+.wiki-title {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    border-bottom: 1px solid lightblue;
+    padding-bottom: 3px;
+    background: linear-gradient(to bottom, white 30%, aliceblue 70%);
+}
+
+.wiki-title-bottom {
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.navigation-wrapper {
+    margin-top: 25px;
+}
+
+.nav-ul {
+    font-size: 13px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 5px;
+}
+
+.nav-link {
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+nav h5 {
+    font-size: 13px;
+    font-weight: normal;
+    color: dimgray;
+    padding: 0;
+    margin: 0 0 10px 5px;
+    border-bottom: 1px solid darkgray;
+}
+
+.main {
+    padding: 0 15px;
+}
+
+.main-text {
+    font-size: 14px;
+    float: left;
+}
+
+.gradient-descent-logo {
+    float: right;
+    border: 1px solid darkgray;
+}
+
+.gradient-logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    width: 200px;
+}
+
+.gradient-descent-logo img {
+    display: block;
+    width: 100%;
+}
+
+.img-caption {
+    font-size: 12px;
+}
+
+.bottom {
+    background: #f6f6f6;
+    font-size: 13px;
+}
