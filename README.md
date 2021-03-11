@@ -1,3 +1,5 @@
+# KFU-Programming-Java3
+
 ## INF 1.
 [ITIS_Practice.src.main.java.ru.kpfu.itis.group903.nurkaev.wikipedia](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/ITIS_Practice/src/main/java/ru/kpfu/itis/group903/nurkaev/wikipedia)
 
