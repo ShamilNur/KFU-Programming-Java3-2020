@@ -2,7 +2,7 @@
 
 ### [INF 1](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/ITIS_Practice/src/main/java/ru/kpfu/itis/group903/nurkaev/wikipedia)
 
-Сверстан клон Википедии. HTML, CSS
+- Сверстан клон Википедии. HTML, CSS
 
 ### [INF 2](https://github.com/ShamilNur/KFU-Programming-Java3/tree/main/ITIS_Practice/src/main/java/ru/kpfu/itis/group903/nurkaev/wikipedia)
 
